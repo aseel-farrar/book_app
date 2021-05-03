@@ -13,8 +13,13 @@ server.set('view engine', 'ejs');
 server.use(express.urlencoded({extended:true}));
 server.use(express.static('./public'));
 
-server.get('/hello', (req, res) => {
+server.get('/', (req, res) => {
     // res.send('Home Page...');
+    res.render('pages/searches/new');
+});
+
+server.get('/hello', (req, res) => {
+    // res.send('Test Page...');
     res.render('pages/index');
 });
 
