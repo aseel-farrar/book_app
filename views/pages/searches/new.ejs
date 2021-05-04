@@ -9,18 +9,20 @@
 </head>
 
 <body>
-    <form action="" method="POST">
-        <input type="text" name="titleOrAuthor" id="titleOrAuthor" placeholder="Enter a title or author">
-        <div>
-            <label for="title">Title</label>
-            <input type="radio" name="title" id="title">
-        </div>
-        <div>
-            <label for="" author>Author</label>
-            <input type="radio" name="author" id="author">
-        </div>
-        <button>Search the Google Books API</button>
-    </form>
+    <div>
+        <h2>Search by title or author</h2>
+
+        <form action="/searches" method="POST">
+            <input type="text" name="titleOrAuthor" id="titleOrAuthor" placeholder="Enter a title or author">
+            <div>
+                <label for="title">Title</label>
+                <input type="radio" name="choose" value="title">
+                <label for="author">Author</label>
+                <input type="radio" name="choose" value="author">
+            </div>
+            <button>Search the Google Books API</button>
+        </form>
+    </div>
 </body>
 
-</html> 
+</html>
