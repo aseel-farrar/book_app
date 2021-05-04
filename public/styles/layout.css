@@ -1,8 +1,10 @@
 .mainContaner{
-  width: 90%;
+  width: 80%;
   margin: auto;
 }
-
+h1{
+  font-size: xx-large;
+}
 
 h2 {
   background-color: #6e7c7c;
@@ -25,7 +27,7 @@ button{
 
 img{
   border:solid 5px #dfddc2;
-  width: 70%;
+  width: 50%;
 }
 h3{
   font-size: larger;
@@ -39,4 +41,5 @@ h4{
 p{
   font-size: medium;
   text-align: justify;
+  width: 70%;
 }
