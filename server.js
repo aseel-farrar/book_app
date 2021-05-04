@@ -25,6 +25,10 @@ server.get('/hello', (req, res) => {
     res.render('pages/index');
 });
 
+server.get('*',(req, res)=>{
+    res.render('pages/error')
+})
+
 
 // handlers
 function searchesHandle(req, res) {
@@ -39,21 +43,20 @@ function searchesHandle(req, res) {
                 let book = new Book(item.volumeInfo);
                 allBooks.push(book);
             })
-            res.send(allBooks);
-            // res.render('searches/show', { allBooks: allBooks });
+            // res.send(allBooks);
+            res.render('pages/searches/show', { allBooks: allBooks });
         })
 }
 
 
+
+//book constructor
 function Book(bookData) {
     this.title = bookData.title || 'No Title';
     this.img = bookData.imageLinks || `https://i.imgur.com/J5LVHEL.jpg`;
     this.author = bookData.authors || 'Unknown Author';
     this.description = bookData.description || 'No Description';
 }
-
-
-
 
 
 server.listen(PORT, () => {
