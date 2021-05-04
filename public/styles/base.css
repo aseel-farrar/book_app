@@ -1,3 +1,31 @@
-h2{
-    color: red;
+* {
+  box-sizing: border-box;
 }
+body {
+  display: grid;
+  grid-template-rows: 90px 1fr 70px;
+  background-color: #92967d;
+
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+  height: 90px;
+  padding: 15px;
+}
+footer {
+  background-color: black;
+  color: white;
+  height: 70px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
