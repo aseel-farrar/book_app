@@ -1,8 +1,10 @@
 .mainContaner{
-  width: 90%;
+  width: 80%;
   margin: auto;
 }
-
+h1{
+  font-size: xx-large;
+}
 
 h2 {
   background-color: #6e7c7c;
@@ -39,4 +41,5 @@ h4{
 p{
   font-size: medium;
   text-align: justify;
+  width: 70%;
 }
