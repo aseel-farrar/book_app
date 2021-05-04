@@ -1,0 +1,42 @@
+.mainContaner{
+  width: 90%;
+  margin: auto;
+}
+
+
+h2 {
+  background-color: #6e7c7c;
+  height: 50px;
+  text-align: center;
+  font-size: x-large;
+  line-height: 2;
+}
+
+
+form {
+  width: 80%;
+  margin: auto;
+}
+
+button{
+  background-color: black;
+  color: white;
+}
+
+img{
+  border:solid 5px #dfddc2;
+  width: 70%;
+}
+h3{
+  font-size: larger;
+  text-shadow: 2px 2px 8px black;
+  color: white;
+}
+h4{
+  font-size: large;
+  font-style: italic;
+}
+p{
+  font-size: medium;
+  text-align: justify;
+}

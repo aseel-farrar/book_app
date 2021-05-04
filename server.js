@@ -15,6 +15,10 @@ server.use(express.static('./public'));
 
 // ROUTES
 server.get('/', (req, res) => {
+    res.render('pages/index');
+});
+
+server.get('/newSearch', (req, res) => {
     res.render('pages/searches/new');
 });
 
@@ -44,7 +48,7 @@ function searchesHandle(req, res) {
                 allBooks.push(book);
             })
             // res.send(allBooks);
-            res.render('pages/searches/show', { allBooks: allBooks });
+            res.render('pages/searches/show', { allBooksData: allBooks });
         })
 }
 
@@ -53,9 +57,9 @@ function searchesHandle(req, res) {
 //book constructor
 function Book(bookData) {
     this.title = bookData.title || 'No Title';
-    this.img = bookData.imageLinks || `https://i.imgur.com/J5LVHEL.jpg`;
+    this.img = bookData.imageLinks.thumbnail  || `https://i.imgur.com/J5LVHEL.jpg`;
     this.author = bookData.authors || 'Unknown Author';
-    this.description = bookData.description || 'No Description';
+    this.description  = bookData.description || 'No Description Available';
 }
 
 
