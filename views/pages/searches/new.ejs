@@ -15,6 +15,11 @@
 <body>
     <header>
         <h1>Best Books!</h1>
+        <div class='links'>
+            <a href="/">Home</a>
+            <a href="/newSearch">Search</a>
+        </div>
+
         <a href="/newSearch">
             <div class="bugerMenuContainer">
                 <div class="bugerMenu"></div>
@@ -23,36 +28,37 @@
             </div>
         </a>
     </header>
-<main>
-    <h2>Search by title or author</h2>
-    <div class="mainContaner">
-        <form action="/searches" method="POST">
-            <input class="formElements" type="text" name="titleOrAuthor" id="titleOrAuthor" placeholder="Enter a title or author">
-            <div class="choose">
-                <label for="title">Title</label>
-                <input type="radio" name="choose" value="title" id="title" required>
+    <main>
+        <h2>Search by title or author</h2>
+        <div class="mainContaner">
+            <form action="/searches" method="POST">
+                <input class="formElements" type="text" name="titleOrAuthor" id="titleOrAuthor"
+                    placeholder="Enter a title or author" required>
+                <div class="choose">
+                    <label for="title">Title</label>
+                    <input type="radio" name="choose" value="title" id="title" required>
                 </div>
-               <br>
-               <div class="choose">
-                <label for="author">Author</label>
-                <input type="radio" name="choose" value="author"  id="author" required>
-            </div>
-            <button class="formElements">Search the Google Books API</button>
-        </form>
+                <br>
+                <div class="choose">
+                    <label for="author">Author</label>
+                    <input type="radio" name="choose" value="author" id="author" required>
+                </div>
+                <button class="formElements">Search the Google Books API</button>
+            </form>
+        </div>
+
+    </main>
+
+</body>
+<footer>
+
+    <div id="dotesContainer" class="dots-container">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
     </div>
-
-</main>
-
-    </body>
-    <footer>
-        
-  <div id="dotesContainer" class="dots-container">
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </div>
-    </footer>
+</footer>
 </body>
 
 </html>
