@@ -1,53 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index.egs </title>
-    <link rel="stylesheet" href="../../styles/reset.css">
-    <link rel="stylesheet" href="../../styles/base.css">
-    <link rel="stylesheet" href="../../styles/layout.css">
-    <link rel="stylesheet" href="../../styles/modules.css">
-</head>
+<%- include('../layout/head'); %>
 
-<body>
 
-    <header>
-        <h1>Best Books!</h1>
+    <body>
 
-        <div class = 'links'>
-            <a href="/">Home</a>
-            <a href="/newSearch">Search</a>
-          </div>
+        <%- include('../layout/header'); %>
 
-        <a href="/newSearch">
-            <div class="bugerMenuContainer">
-                <div class="bugerMenu"></div>
-                <div class="bugerMenu"></div>
-                <div class="bugerMenu"></div>
-            </div>
-        </a>
-    </header>
+            <main>
+                <h2>Home Page</h2>
 
-    <main>
-        <h2>Home Page</h2>
-        <div class="mainContaner">
+                <div>
+                    <h4> Book Count: <%= favBooksData.length %>
+                    </h4>
+                    <% favBooksData.forEach(favBook=>{ %>
+                        <div class="bookCard">
+                            <img src='<%= favBook.img%>' alt="<%= favBook.title%>">
+                            <h3>
+                                <%= favBook.title%>
+                            </h3>
+                            <h4>
+                                <%= favBook.author.replace(/\{|\}|"/g,'')%>
+                            </h4>
+                            <p>
+                                <%= favBook.description%>
+                            </p>
+                        </div>
+                        <% }) %>
+                </div>
+            </main>
 
-  
+            <%- include('../layout/footer'); %>
 
-        </div>
-    </main>
-    <footer>
-
-        <div id="dotesContainer" class="dots-container">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-    </footer>
-</body>
+    </body>
 
 </html>
