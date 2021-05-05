@@ -1,11 +1,13 @@
 * {
   box-sizing: border-box;
 }
+
 body {
+  margin: auto;
   display: grid;
   grid-template-rows: 90px 1fr 70px;
   background-color: #92967d;
-
+  font-family: "Avenir Next", "Avenir", sans-serif;
 }
 
 header {
@@ -28,4 +30,3 @@ footer {
   color: white;
   text-align: center;
 }
-
