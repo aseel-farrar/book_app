@@ -66,3 +66,8 @@
 .bookCard p {
   margin: auto;
 }
+.bookCount {
+  text-align: center;
+  line-height: 2;
+  padding-top: 10px;
+}
