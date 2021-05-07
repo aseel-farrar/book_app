@@ -1,0 +1,18 @@
+<section class="bookCard">
+  <img src='<%= bookDetails.img%>' alt="<%= bookDetails.title%>">
+  <h3>
+    <%= bookDetails.title%>
+  </h3>
+  <h4>
+    <%= bookDetails.author.replace(/\{|\}|"/g,'')%>
+  </h4>
+  <p>
+    <%= bookDetails.isbn%>
+  </p>
+  <p>
+    bookshelf: <%= bookDetails.id%>
+  </p>
+  <p>
+    <%= bookDetails.description %>
+  </p>
+</section>

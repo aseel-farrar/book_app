@@ -4,5 +4,6 @@ CREATE TABLE IF NOT EXISTS books(
     title  VARCHAR(255),
     img VARCHAR(255),
     author VARCHAR(255),
-    description TEXT
+    description TEXT,
+    isbn VARCHAR(255)
 ); 

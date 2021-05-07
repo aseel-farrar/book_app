@@ -15,7 +15,7 @@
                     <h4 class="bookCount"> Book Count: <%= favBooksData.length %>
                     </h4>
                     <% favBooksData.forEach(favBook=>{ %>
-                        <div class="bookCard">
+                        <section class="bookCard">
                             <img src='<%= favBook.img%>' alt="<%= favBook.title%>">
                             <h3>
                                 <%= favBook.title%>
@@ -24,11 +24,14 @@
                                 <%= favBook.author.replace(/\{|\}|"/g,'')%>
                             </h4>
                             <p>
-                                <%= favBook.description%>
+                                <%= favBook.isbn%>
                             </p>
-                        </div>
+                            <a href='/books/<%=favBook.id%>'> <button>Book Details</button></a>
+
+                        </section>
                         <% }) %>
                 </div>
+
             </main>
 
             <%- include('../layout/footer'); %>
