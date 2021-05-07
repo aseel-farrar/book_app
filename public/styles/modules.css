@@ -65,6 +65,8 @@
 }
 .bookCard p {
   margin: auto;
+  text-align: center;
+
 }
 .bookCount {
   text-align: center;

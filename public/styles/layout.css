@@ -2,7 +2,7 @@
   width: 80%;
   margin: auto;
 } */
-h1{
+h1 {
   font-size: xx-large;
 }
 
@@ -14,33 +14,37 @@ h2 {
   line-height: 2;
 }
 
-
 form {
   width: 80%;
   margin: auto;
   font-size: large;
 }
 
-button{
+button {
   background-color: black;
   color: white;
 }
 
-img{
-  border:solid 5px #dfddc2;
-  width: 50%;
+img {
+  border: solid 5px #dfddc2;
+  width: 25%;
 }
-h3{
+h3 {
   font-size: larger;
   text-shadow: 2px 2px 8px black;
   color: white;
 }
-h4{
+h4 {
   font-size: large;
   font-style: italic;
 }
-p{
+p {
   font-size: medium;
   text-align: justify;
   width: 70%;
+}
+
+.error {
+  margin: auto;
+  width:100%;
 }

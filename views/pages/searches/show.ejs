@@ -9,31 +9,34 @@
 
             <main>
                 <h2>Search Results</h2>
+                <% allBooksData.forEach(book=>{ %>
+                    <section class="bookCard">
+                        <img src='<%= book.img%>' alt="<%= book.title%>">
+                        <h3>
+                            <%= book.title%>
+                        </h3>
+                        <h4>
+                            <%= book.author%>
+                        </h4>
+                    </section>
 
-                <!-- <div>
-            <img src="" alt="">
-            <h3></h3>
-            <h4></h4>
-            <p></p>
-        </div> -->
+                    <section>
+                        <form action="/books" method="POST">
+                            <input type="hidden" name="title" value="<%= book.title%>" />
+                            <input type="hidden" name="img" value="<%= book.img%>" />
+                            <input type="hidden" name="author" value="<%= book.author%>" />
+                            <input type="hidden" name="description" value=" <%= book.description%>" />
+                            <input type="hidden" name="isbn" value="<%= book.isbn%>" />
+                            <button> Add Book</button>
+                        </form>
+                    </section>
+                    <% }) %>
 
-                    <% allBooksData.forEach(book=>{ %>
-                        <div class="bookCard">
-                            <img src='<%= book.img%>' alt="<%= book.title%>">
-                            <h3>
-                                <%= book.title%>
-                            </h3>
-                            <h4>
-                                <%= book.author%>
-                            </h4>
-                            <p>
-                                <%= book.description%>
-                            </p>
-                        </div>
-                        <% }) %>
+
 
 
             </main>
+
             <%- include('../../layout/footer'); %>
 
     </body>
