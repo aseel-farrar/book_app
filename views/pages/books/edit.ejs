@@ -1,0 +1,29 @@
+<!-- <button class="updateBtn"> Update Book</button> -->
+
+<section class="updateForm">
+  <form action="/updateBook/<%=bookDetails.id%>?_method=put" method="post">
+    <br>
+    <label for="title">Title</label>
+    <br>
+    <input name="title" id="title" value="<%= bookDetails.title%>" />
+    <br>
+    <label for="img">Image URL</label>
+    <br>
+    <input name="img" id="img" value="<%= bookDetails.img%>" />
+    <br>
+    <label for="author">Author</label>
+    <br>
+    <input name="author" id="author" value="<%= bookDetails.author.replace(/\{|\}|"/g,'')%>" />
+    <br>
+    <label for="description">Description</label>
+    <br>
+    <textarea name="description" id="description" cols="30" rows="10"><%= bookDetails.description%></textarea>
+    <br>
+    <label for="isbn">ISBN</label>
+    <br>
+    <input name="isbn" id="isbn" value="<%= bookDetails.isbn%>" />
+    <br>
+    <button> Confirm Update</button>
+    <br>
+  </form>
+</section>

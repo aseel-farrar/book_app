@@ -1,16 +1,20 @@
 'use strict';
 
 require('dotenv').config();
+const cors = require('cors');
 const express = require('express');
 const pg = require('pg');
 const superagent = require('superagent');
+const methodOverride = require('method-override');
 
 const PORT = process.env.PORT || 5000;
+server.use(cors());
 
 const server = express();
 server.set('view engine', 'ejs');
 server.use(express.urlencoded({ extended: true }));
 server.use(express.static('./public'));
+server.use(methodOverride('_method'));
 
 // const client = new pg.Client(process.env.DATABASE_URL);
 
@@ -25,6 +29,9 @@ server.get('/', homeHandle);
 
 server.get('/books/:id', detailsHandle);
 
+server.put('/updateBook/:id', updateBookHandle);
+
+server.put('/deleteBook/:id', deleteBookHandle);
 
 server.get('/newSearch', (req, res) => {
   res.render('pages/searches/new');
@@ -54,23 +61,44 @@ function homeHandle(req, res) {
     });
 }
 
-function addBookHandle (req,res){
+function updateBookHandle(req, res) {
+  // console.log(req.params.id);
+  let { title, img, author, description, isbn } = req.body;
+  let SQL = `UPDATE books SET title=$1, img=$2, author=$3, description=$4, isbn=$5 WHERE id=$6;`;
+  let safeValues = [title, img, author, description, isbn, req.params.id];
+  client.query(SQL, safeValues)
+    .then(() => {
+      res.redirect(`/books/${req.params.id}`);
+    });
+}
+
+function deleteBookHandle(req, res) {
+  let SQL = `DELETE FROM books WHERE id=$1;`;
+  let safevalue = [req.params.id];
+  client.query(SQL, safevalue)
+    .then(() => {
+      res.redirect(`/`);
+    });
+}
+
+
+function addBookHandle(req, res) {
   // console.log(req.body);
   let SQL = `INSERT INTO books (title, img, author, description, isbn) VALUES ($1, $2, $3, $4, $5) RETURNING *;`;
   let safeValue = [req.body.title, req.body.img, req.body.author, req.body.description, req.body.isbn];
-  client.query(SQL,safeValue)
-    .then(result=>{
+  client.query(SQL, safeValue)
+    .then(result => {
       // console.log(result.rows[0]);
       res.redirect(`/books/${result.rows[0].id}`);
     });
 }
 
-function detailsHandle(req,res){
+function detailsHandle(req, res) {
   let SQL = `SELECT * FROM books WHERE id = $1;`;
   let safeValue = [req.params.id];
-  client.query(SQL,safeValue)
-    .then(result=>{
-      res.render('pages/books/detail', { bookDetails: result.rows[0]});
+  client.query(SQL, safeValue)
+    .then(result => {
+      res.render('pages/books/detail', { bookDetails: result.rows[0] });
       // console.log(result.rows[0]);
     });
 }

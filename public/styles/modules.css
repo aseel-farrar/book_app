@@ -73,3 +73,19 @@
   line-height: 2;
   padding-top: 10px;
 }
+
+.modificatinSection button{
+justify-content: center;
+width: 15rem;
+height: 3rem;
+margin: auto;
+float: left;
+}
+
+
+.modificatinSection form input, .modificatinSection form textarea{
+  width:75%;
+  margin: 1rem;
+  padding: 1rem;
+  align-self: center;
+  }

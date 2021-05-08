@@ -8,15 +8,25 @@
     <%- include('../../layout/header'); %>
 
       <main>
-        <h2>Book Detail</h2>
-        <%- include('show'); %>
+        <h2>Book Details</h2>
 
-          <section>
-            <%- include('../../layout/footer'); %>
-          </section>
+        <section class="modificatinSection">
+          <%- include('show'); %>
+          
+          <form class= 'deleteBtn' action="/deleteBook/<%=bookDetails.id%>?_method=put" method="post">
+            <button>Delete Book</button>
+          </form>
+          
+          <button class="updateBtn"> Update Book</button>
+            <%- include('edit'); %>
+        </section>
+
+        <section>
+          <%- include('../../layout/footer'); %>
+        </section>
       </main>
-
-
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="/js/app.js"></script>
   </body>
 
 </html>
